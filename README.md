@@ -1,0 +1,2 @@
+# statistics_tool
+用于做统计代码生成，统计iOS和Android归纳整理的一系列脚本
