@@ -6,7 +6,6 @@ import os
 import time
 import glob
 from sys import argv
-import re
 import operator
 
 from public_pythons import all_stat_keys_from_code

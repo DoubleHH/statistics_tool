@@ -2,6 +2,7 @@
 
 # 将数据转换成excel
 
+from openpyxl import load_workbook
 from openpyxl import Workbook
 from openpyxl.styles import colors
 from openpyxl.styles import Font, Color
@@ -9,6 +10,11 @@ from openpyxl.styles import colors
 from openpyxl.styles import Alignment
 from openpyxl import Workbook
 
+def read_excel_sheet(excel_path, sheet_index):
+    wb = load_workbook(excel_path)
+    sheet_names = wb.get_sheet_names()
+    ws = wb.get_sheet_by_name(sheet_names[sheet_index])
+    return ws
 
 def generate_excel(sheet_array, excel_name):
     wb = Workbook()
