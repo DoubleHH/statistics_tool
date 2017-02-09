@@ -78,6 +78,7 @@ def generate_keys_array(ws, already_existed_keys):
             row_array.append("此行是成单统计")
         else:
             if all_stat_keys_from_code.check_action(action) == False:
+                print "line:%s, key:%s" % (index, key)
                 hh_print.print_error(index, "(%s) 统计action有问题，必须是click等" % (key))
             if len(note) == 0:
                 hh_print.print_error(index, "(%s) 注释为空" % (key))
@@ -116,6 +117,10 @@ def generate_keys_array(ws, already_existed_keys):
     hh_print.print_color_string("新的统计key共有%s个" % (total_new_items), "lred")
     return key_wappers
 
+def excel_name():
+    time_string = time.strftime('%Y%m%d_%H%M_%S', time.localtime(time.time()))
+    return ("new_stat_" + time_string)
+
 if __name__ == '__main__':
     if len(argv) < 2:
         print "Usage: python generate_keys.py excel_path ios_stat_file\n"
@@ -126,7 +131,7 @@ if __name__ == '__main__':
         exit(0)
     already_existed_keys = []
     if len(argv) > 2:
-        already_existed_items = get_all_keys_from_code.generate_ios_keys(argv[2])
+        already_existed_items = all_stat_keys_from_code.generate_ios_keys(argv[2])
         already_existed_keys = already_existed_items.keys()
     array = generate_keys_array(ws, already_existed_keys)
-    hh_excel_tool.generate_excel([ ["keys", array], ], "4.4.0_stat_dealed")
+    hh_excel_tool.generate_excel([ ["keys", array], ], excel_name())
