@@ -9,6 +9,8 @@ from openpyxl.styles import Font, Color
 from openpyxl.styles import colors
 from openpyxl.styles import Alignment
 from openpyxl import Workbook
+import csv
+import codecs
 
 def read_excel_sheet(excel_path, sheet_index):
     wb = load_workbook(excel_path)
@@ -28,6 +30,12 @@ def generate_excel(sheet_array, excel_name):
         generate_excel_sheet(ws, items_aray[1])
         sheet_index = sheet_index + 1
     wb.save(excel_name + '.xlsx')
+
+def generate_csv(all_rows, csv_name):
+    csv_file = open(csv_name + '.csv', 'wb')
+    csv_file.write(codecs.BOM_UTF8)
+    wr = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
+    wr.writerows(all_rows)
 
 def generate_excel_sheet(ws, items):
     row = 1

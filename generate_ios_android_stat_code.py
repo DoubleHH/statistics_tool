@@ -7,22 +7,25 @@ import time
 import glob
 from sys import argv
 import operator
+from optparse import OptionParser
 
 from public_pythons import all_stat_keys_from_code
 from public_pythons import hh_excel_tool
 from public_pythons import hh_print
 
+GLOBAL_PREFIX = "SF"
+
 # 生成安卓统计代码
 def generate_android_one_key_code(key, action, variable_name, note):
     dealed_key = key.replace("%", "%s")
-    if cmp(action.lower(), "show") == 0:
-        dealed_key = dealed_key + " " + "offline"
-    code = "// " + note + "\n" + "String " + variable_name + " = \"" + dealed_key + "\";"
+    dealed_note = "/**\n *" + note + "\n */"
+    code = "" + dealed_note + "\n" + "public static final String " + variable_name + " = \"" + dealed_key + " " + action + "\";"
     return code
 
 # 生成代码中的key值
 def generate_variable_code(key, action):
-    name = ("WM_STAT_" + key.upper().replace('.', '_') + "_" + action.upper())
+    global GLOBAL_PREFIX
+    name = (GLOBAL_PREFIX + "_" + key.upper().replace('.', '_') + "_" + action.upper())
     name = name.replace("%", "")
     return name
 
@@ -34,10 +37,7 @@ def generate_ios_one_key_code_h(variable_name, note):
 # 生成iOS统计.m代码
 def generate_ios_one_key_code_m(key, action, variable_name, note):
     key = key.replace("%", "%@")
-    offline = ""
-    if cmp(action.lower(), "show") == 0:
-        offline = " offline"
-    code = "/// " + note + "\n" + ("NSString *const %s = @\"%s %s%s\";" % (variable_name, key, action.lower(), offline))
+    code = "/// " + note + "\n" + ("NSString *const %s = @\"%s %s\";" % (variable_name, key, action.lower()))
     return code
 
 def string_with_value(value):
@@ -74,8 +74,9 @@ def generate_keys_array(ws, already_existed_keys):
         note = string_with_value(row[1].value) + ", " + excel_note
         # print "key:%s, value:%s, note:%s" % (key, action, note)
         if len(key) == 0:
-            hh_print.print_error(index, "(%s) key为空" % (key))
-            row_array.append("此行是成单统计")
+            if len(excel_note) > 0:
+                hh_print.print_error(index, "(%s) key为空" % (key))
+            row_array.append("非统计行")
         else:
             if all_stat_keys_from_code.check_action(action) == False:
                 print "line:%s, key:%s" % (index, key)
@@ -107,31 +108,78 @@ def generate_keys_array(ws, already_existed_keys):
 
     print "\n\nAndroid code:"
     hh_print.print_color_string(android_code, "purple")
-
     print "\niOS code.h:"
     hh_print.print_color_string(ios_code_h, "red")
-
     print "\niOS code.m:"
     hh_print.print_color_string(ios_code_m, "brown")
-
     hh_print.print_color_string("新的统计key共有%s个" % (total_new_items), "lred")
+    write_to_file(output_folder() + "android_code.txt", android_code)
+    write_to_file(output_folder() + "ios_code.txt", ios_code_h + '\n' + ios_code_m)
     return key_wappers
+
+def output_folder():
+    return os.path.dirname(os.path.abspath(__file__)) + '/output/'
 
 def excel_name():
     time_string = time.strftime('%Y%m%d_%H%M_%S', time.localtime(time.time()))
-    return ("new_stat_" + time_string)
+    return output_folder() + ("new_stat_" + time_string)
+
+def config_code_prefix_from_excel(ws):
+    global GLOBAL_PREFIX 
+    GLOBAL_PREFIX = (ws['D2'].value).strip()
+
+def write_to_file(file_name, text):
+    file_object = open(file_name, 'w')
+    file_object.write(text)
+    file_object.close()
+
+def mtj_name():
+    time_string = time.strftime('%Y%m%d_%H%M_%S', time.localtime(time.time()))
+    return output_folder() + ("MTJ事件模板_" + time_string)
+
+def create_mtj_file(sheet_array):
+    mtj_array = []
+    mtj_array.append([u'事件ID', u'事件名称'])
+    index = 0
+    for item_array in sheet_array:
+        index = index + 1
+        key = item_array[5]
+        if index < 2 or len(key) == 0:
+            continue
+        key_action = key
+        if len(key_action) > 30:
+            error = 'Length of ' + key_action + ': ' + str(len(key_action)) + '!! ERROR！大哥，超过30个字符不能插入SB MTJ ！！！';
+            hh_print.print_color_string(error, 'lred')
+        name = item_array[2] + u"，" + item_array[4]
+        mtj_array.append([key_action, name])
+    hh_excel_tool.generate_csv(mtj_array, mtj_name())
 
 if __name__ == '__main__':
-    if len(argv) < 2:
-        print "Usage: python generate_keys.py excel_path ios_stat_file\n"
+    # print (os.path.abspath(__file__))
+    # print (os.path.dirname(os.path.abspath(__file__)))
+    # exit(0)
+    parser = OptionParser(usage="python %prog [options] excel_path ios_original_statistics_file")
+    parser.add_option("-m", "--mtj",
+                    action = "store_true",
+                    dest = "mtj",
+                    default = False,
+                    help = u"生成MTJ事件的文件"
+                    )
+    (options, args) = parser.parse_args()
+    if len(args) < 1:
+        print "参数错误：\n参数一：PM填好的标准统计文件，\n参数二：已有的iOS统计代码，用于对PM生成的统计做过滤\n[options]：指定其他功能，用--help或-h来查看"
+        print "\nUsage:python %s [options] excel_path ios_original_statistics_file" % (__file__)
         exit(0)
-    ws = hh_excel_tool.read_excel_sheet(argv[1], 0)
+    ws = hh_excel_tool.read_excel_sheet(args[0], 0)
     if ws == None:
         hh_print.print_error(0, "sheet doesn't exist")
         exit(0)
+    config_code_prefix_from_excel(ws)
     already_existed_keys = []
-    if len(argv) > 2:
-        already_existed_items = all_stat_keys_from_code.generate_ios_keys(argv[2])
+    if len(args) > 1:
+        already_existed_items = all_stat_keys_from_code.generate_ios_keys(args[1])
         already_existed_keys = already_existed_items.keys()
     array = generate_keys_array(ws, already_existed_keys)
     hh_excel_tool.generate_excel([ ["keys", array], ], excel_name())
+    if options.mtj:
+        create_mtj_file(array)
