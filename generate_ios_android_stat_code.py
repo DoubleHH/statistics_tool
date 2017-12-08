@@ -9,9 +9,9 @@ from sys import argv
 import operator
 from optparse import OptionParser
 
-from public_pythons import all_stat_keys_from_code
-from public_pythons import hh_excel_tool
-from public_pythons import hh_print
+from public import all_stat_keys_from_code
+from public import hh_excel_tool
+from public import hh_print
 
 GLOBAL_PREFIX = "SF"
 

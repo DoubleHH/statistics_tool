@@ -9,8 +9,8 @@ from sys import argv
 import re
 import operator
 
-from public_pythons import all_stat_keys_from_code
-from public_pythons import hh_print
+from public import all_stat_keys_from_code
+from public import hh_print
 
 def ag_shell(key, goal_path, ignore_path):
     ag_shell = ""

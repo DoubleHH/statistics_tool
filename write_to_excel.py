@@ -8,8 +8,8 @@ import glob
 from sys import argv
 import operator
 
-from public_pythons import all_stat_keys_from_code
-from public_pythons import hh_excel_tool
+from public import all_stat_keys_from_code
+from public import hh_excel_tool
 
 def find_item(items, key):
     for item in items:

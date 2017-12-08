@@ -1,0 +1,226 @@
+
+/// 接单弹窗, 点击批量处理按钮
+FOUNDATION_EXPORT NSString *const SFK_JIEDANPG_CHULIBTN_CLICK;
+/// 接单弹窗, 点击订单信息区域（非按钮）
+FOUNDATION_EXPORT NSString *const SFK_JIEDANPG_CELL_CLICK;
+/// 接单弹窗, 点击关闭按钮
+FOUNDATION_EXPORT NSString *const SFK_JIEDANPG_CLOSEBTN_CLICK;
+/// 任务主页, 点击通知黄条
+FOUNDATION_EXPORT NSString *const SFK_MAINPG_NEWS_CLICK;
+/// 任务主页, 点击批量处理黑条
+FOUNDATION_EXPORT NSString *const SFK_MAINPG_DEAL_CLICK;
+/// 任务主页, 下拉刷新
+FOUNDATION_EXPORT NSString *const SFK_MAINPG_REFRESH_CLICK;
+/// 任务主页, 点击订单条目查看详情
+FOUNDATION_EXPORT NSString *const SFK_MAINPG_CELL_CLICK;
+/// 任务主页, 点击确认到店按钮
+FOUNDATION_EXPORT NSString *const SFK_MAINPG_DAODIAN_CLICK;
+/// 任务主页, 点击用户电话按钮
+FOUNDATION_EXPORT NSString *const SFK_MAINPG_USERTEL_CLICK;
+/// 任务主页, 点击商户导航按钮
+FOUNDATION_EXPORT NSString *const SFK_MAINPG_SHOPNAV_CLICK;
+/// 任务主页, 点击用户导航按钮
+FOUNDATION_EXPORT NSString *const SFK_MAINPG_USERNAV_CLICK;
+/// 任务主页, 点击个人中心按钮
+FOUNDATION_EXPORT NSString *const SFK_MAINPG_USERPG_CLICK;
+/// 任务主页, 点驻店（非按钮）
+FOUNDATION_EXPORT NSString *const SFK_MAINPG_ZHUDIAN_CLICK;
+/// 任务主页, 驻店骑士点击我已到店按钮
+FOUNDATION_EXPORT NSString *const SFK_MAINPG_INSHOP_CLICK;
+/// 任务主页, 驻店骑士点击我要离店按钮
+FOUNDATION_EXPORT NSString *const SFK_MAINPG_OUTSHOP_CLICK;
+/// 任务主页, 驻店骑士暂无订单时-点击我要离店按钮
+FOUNDATION_EXPORT NSString *const SFK_MAINPG_OUTSHOP_NOORDER_CLICK;
+/// 订单详情, 点击确认到店按钮
+FOUNDATION_EXPORT NSString *const SFK_DETAILPG_CONFIRMSHOP_CLICK;
+/// 订单详情, 点击确认取货按钮
+FOUNDATION_EXPORT NSString *const SFK_DETAILPG_CONFIRMTAKE_CLICK;
+/// 订单详情, 点击确认到达按钮
+FOUNDATION_EXPORT NSString *const SFK_DETAILPG_CONFIRMARRIVE_CLICK;
+/// 订单详情, 商户导航botten
+FOUNDATION_EXPORT NSString *const SFK_DETAILPG_SHOPNAV_CLICK;
+/// 订单详情, 用户导航botten
+FOUNDATION_EXPORT NSString *const SFK_DETAILPG_USERNAV_CLICK;
+/// 订单详情, 联系用户botten
+FOUNDATION_EXPORT NSString *const SFK_DETAILPG_USERTEL_CLICK;
+/// 订单详情, 联系商户botten
+FOUNDATION_EXPORT NSString *const SFK_DETAILPG_SHOPTEL_CLICK;
+/// 订单详情, 通知取货按钮点击
+FOUNDATION_EXPORT NSString *const SFK_DETAILPG_NOTIFYUSERBTN_CLICK;
+/// 订单详情, 通知取货弹窗点击通知成功
+FOUNDATION_EXPORT NSString *const SFK_DETAILPG_NOTIFYUSER_OK_CLICK;
+/// 订单详情, 通知取货弹窗点击通知失败发短信
+FOUNDATION_EXPORT NSString *const SFK_DETAILPG_NOTIFYUSER_FAIL_CLICK;
+/// 订单详情, 撤回订单按钮点击
+FOUNDATION_EXPORT NSString *const SFK_DETAILPG_CHEHUIBTN_CLICK;
+/// 订单详情, 撤回订单-货箱已满
+FOUNDATION_EXPORT NSString *const SFK_DETAILPG_CHEHUI_FULL_CLICK;
+/// 订单详情, 撤回订单-出餐慢
+FOUNDATION_EXPORT NSString *const SFK_DETAILPG_CHEHUI_SHLOW_CLICK;
+/// 订单详情, 撤回订单-其他
+FOUNDATION_EXPORT NSString *const SFK_DETAILPG_CHEHUI_ELSE_CLICK;
+/// 订单详情, 撤回订单-取消
+FOUNDATION_EXPORT NSString *const SFK_DETAILPG_CHEHUI_CANCEL_CLICK;
+/// 订单详情, 已通知（非按钮）
+FOUNDATION_EXPORT NSString *const SFK_DETAILPG_ALNOTIARRIVE_CLICK;
+/// 订单详情, 点击订单状态
+FOUNDATION_EXPORT NSString *const SFK_DETAILPG_ORDERDETIAL_CLICK;
+/// 个人中心, 在岗切在岗
+FOUNDATION_EXPORT NSString *const SFK_USERPG_ONLINE_ONLINE_CLICK;
+/// 个人中心, 切换骑士状态选择在岗
+FOUNDATION_EXPORT NSString *const SFK_USERPG_ONLINE_CLICK;
+/// 个人中心, 切换骑士状态选择离岗
+FOUNDATION_EXPORT NSString *const SFK_USERPG_OFFLINE_CLICK;
+/// 个人中心, 切换骑士状态选择小休
+FOUNDATION_EXPORT NSString *const SFK_USERPG_RESLINE_CLICK;
+/// 个人中心, 点击设置按钮
+FOUNDATION_EXPORT NSString *const SFK_USERPG_SETTING_CLICK;
+/// 个人中心, 点击历史订单按钮
+FOUNDATION_EXPORT NSString *const SFK_USERPG_FINISHORDER_CLICK;
+/// 个人中心, 点击消息通知按钮
+FOUNDATION_EXPORT NSString *const SFK_USERPG_NEWS_CLICK;
+/// 历史订单, 点击今日（日历）按钮
+FOUNDATION_EXPORT NSString *const SFK_FINISHPG_TODAY_CLICK;
+/// 历史订单, 点击本日代收及数字（非按钮）
+FOUNDATION_EXPORT NSString *const SFK_FINISHPG_TODAYCOD_CLICK;
+/// 历史订单, 点击已完成tip
+FOUNDATION_EXPORT NSString *const SFK_FINISHPG_COMPLETE_CLICK;
+/// 历史订单, 点击已取消tip
+FOUNDATION_EXPORT NSString *const SFK_FINISHPG_ABOLISH_CLICK;
+/// 历史订单, 点击货到付款tip
+FOUNDATION_EXPORT NSString *const SFK_FINISHPG_COD_CLICK;
+/// 历史订单, 点击订单条目
+FOUNDATION_EXPORT NSString *const SFK_FINISHPG_CELL_CLICK;
+/// 导航页面, 导航选择iphone自带导航（仅供ios）
+FOUNDATION_EXPORT NSString *const SFK_NAVPG_ZIDAI_CLICK;
+/// 导航页面, 导航选择百度地图导航
+FOUNDATION_EXPORT NSString *const SFK_NAVPG_BAIDU_CLICK;
+/// 导航页面, 导航选择高德地图导航
+FOUNDATION_EXPORT NSString *const SFK_NAVPG_GAODE_CLICK;
+/// 导航页面, 导航选择腾讯地图导航
+FOUNDATION_EXPORT NSString *const SFK_NAVPG_TENGXUN_CLICK;
+/// 导航页面, 点击地图上的定位按钮
+FOUNDATION_EXPORT NSString *const SFK_NAVPG_LOC_CLICK;
+/// 导航页面, 点击本机地图按钮
+FOUNDATION_EXPORT NSString *const SFK_NAVPG_BENJI_CLICK;
+/// 消息通知, 下拉刷新
+FOUNDATION_EXPORT NSString *const SFK_NOTIFIYPG_REFRESH_CLICK;
+/// 设置, 退出当前帐号
+FOUNDATION_EXPORT NSString *const SFK_SETTINGPG_OUT_CLICK;
+/// 设置, 关于我们
+FOUNDATION_EXPORT NSString *const SFK_SETTINGPG_ABOUTUS_CLICK;
+/// 无网络页面, 点击刷新按钮
+FOUNDATION_EXPORT NSString *const SFK_NONET_REFESH_CLICK;
+
+/// 接单弹窗, 点击批量处理按钮
+NSString *const SFK_JIEDANPG_CHULIBTN_CLICK = @"jiedanpg.chulibtn click";
+/// 接单弹窗, 点击订单信息区域（非按钮）
+NSString *const SFK_JIEDANPG_CELL_CLICK = @"jiedanpg.cell click";
+/// 接单弹窗, 点击关闭按钮
+NSString *const SFK_JIEDANPG_CLOSEBTN_CLICK = @"jiedanpg.closebtn click";
+/// 任务主页, 点击通知黄条
+NSString *const SFK_MAINPG_NEWS_CLICK = @"mainpg.news click";
+/// 任务主页, 点击批量处理黑条
+NSString *const SFK_MAINPG_DEAL_CLICK = @"mainpg.deal click";
+/// 任务主页, 下拉刷新
+NSString *const SFK_MAINPG_REFRESH_CLICK = @"mainpg.refresh click";
+/// 任务主页, 点击订单条目查看详情
+NSString *const SFK_MAINPG_CELL_CLICK = @"mainpg.cell click";
+/// 任务主页, 点击确认到店按钮
+NSString *const SFK_MAINPG_DAODIAN_CLICK = @"mainpg.daodian click";
+/// 任务主页, 点击用户电话按钮
+NSString *const SFK_MAINPG_USERTEL_CLICK = @"mainpg.usertel click";
+/// 任务主页, 点击商户导航按钮
+NSString *const SFK_MAINPG_SHOPNAV_CLICK = @"mainpg.shopnav click";
+/// 任务主页, 点击用户导航按钮
+NSString *const SFK_MAINPG_USERNAV_CLICK = @"mainpg.usernav click";
+/// 任务主页, 点击个人中心按钮
+NSString *const SFK_MAINPG_USERPG_CLICK = @"mainpg.userpg click";
+/// 任务主页, 点驻店（非按钮）
+NSString *const SFK_MAINPG_ZHUDIAN_CLICK = @"mainpg.zhudian click";
+/// 任务主页, 驻店骑士点击我已到店按钮
+NSString *const SFK_MAINPG_INSHOP_CLICK = @"mainpg.inshop click";
+/// 任务主页, 驻店骑士点击我要离店按钮
+NSString *const SFK_MAINPG_OUTSHOP_CLICK = @"mainpg.outshop click";
+/// 任务主页, 驻店骑士暂无订单时-点击我要离店按钮
+NSString *const SFK_MAINPG_OUTSHOP_NOORDER_CLICK = @"mainpg.outshop.noorder click";
+/// 订单详情, 点击确认到店按钮
+NSString *const SFK_DETAILPG_CONFIRMSHOP_CLICK = @"detailpg.confirmshop click";
+/// 订单详情, 点击确认取货按钮
+NSString *const SFK_DETAILPG_CONFIRMTAKE_CLICK = @"detailpg.confirmtake click";
+/// 订单详情, 点击确认到达按钮
+NSString *const SFK_DETAILPG_CONFIRMARRIVE_CLICK = @"detailpg.confirmarrive click";
+/// 订单详情, 商户导航botten
+NSString *const SFK_DETAILPG_SHOPNAV_CLICK = @"detailpg.shopnav click";
+/// 订单详情, 用户导航botten
+NSString *const SFK_DETAILPG_USERNAV_CLICK = @"detailpg.usernav click";
+/// 订单详情, 联系用户botten
+NSString *const SFK_DETAILPG_USERTEL_CLICK = @"detailpg.usertel click";
+/// 订单详情, 联系商户botten
+NSString *const SFK_DETAILPG_SHOPTEL_CLICK = @"detailpg.shoptel click";
+/// 订单详情, 通知取货按钮点击
+NSString *const SFK_DETAILPG_NOTIFYUSERBTN_CLICK = @"detailpg.notifyuserbtn click";
+/// 订单详情, 通知取货弹窗点击通知成功
+NSString *const SFK_DETAILPG_NOTIFYUSER_OK_CLICK = @"detailpg.notifyuser.ok click";
+/// 订单详情, 通知取货弹窗点击通知失败发短信
+NSString *const SFK_DETAILPG_NOTIFYUSER_FAIL_CLICK = @"detailpg.notifyuser.fail click";
+/// 订单详情, 撤回订单按钮点击
+NSString *const SFK_DETAILPG_CHEHUIBTN_CLICK = @"detailpg.chehuibtn click";
+/// 订单详情, 撤回订单-货箱已满
+NSString *const SFK_DETAILPG_CHEHUI_FULL_CLICK = @"detailpg.chehui.full click";
+/// 订单详情, 撤回订单-出餐慢
+NSString *const SFK_DETAILPG_CHEHUI_SHLOW_CLICK = @"detailpg.chehui.shlow click";
+/// 订单详情, 撤回订单-其他
+NSString *const SFK_DETAILPG_CHEHUI_ELSE_CLICK = @"detailpg.chehui.else click";
+/// 订单详情, 撤回订单-取消
+NSString *const SFK_DETAILPG_CHEHUI_CANCEL_CLICK = @"detailpg.chehui.cancel click";
+/// 订单详情, 已通知（非按钮）
+NSString *const SFK_DETAILPG_ALNOTIARRIVE_CLICK = @"detailpg.alnotiarrive click";
+/// 订单详情, 点击订单状态
+NSString *const SFK_DETAILPG_ORDERDETIAL_CLICK = @"detailpg.orderdetial click";
+/// 个人中心, 在岗切在岗
+NSString *const SFK_USERPG_ONLINE_ONLINE_CLICK = @"userpg.online.online click";
+/// 个人中心, 切换骑士状态选择在岗
+NSString *const SFK_USERPG_ONLINE_CLICK = @"userpg.online click";
+/// 个人中心, 切换骑士状态选择离岗
+NSString *const SFK_USERPG_OFFLINE_CLICK = @"userpg.offline click";
+/// 个人中心, 切换骑士状态选择小休
+NSString *const SFK_USERPG_RESLINE_CLICK = @"userpg.resline click";
+/// 个人中心, 点击设置按钮
+NSString *const SFK_USERPG_SETTING_CLICK = @"userpg.setting click";
+/// 个人中心, 点击历史订单按钮
+NSString *const SFK_USERPG_FINISHORDER_CLICK = @"userpg.finishorder click";
+/// 个人中心, 点击消息通知按钮
+NSString *const SFK_USERPG_NEWS_CLICK = @"userpg.news click";
+/// 历史订单, 点击今日（日历）按钮
+NSString *const SFK_FINISHPG_TODAY_CLICK = @"finishpg.today click";
+/// 历史订单, 点击本日代收及数字（非按钮）
+NSString *const SFK_FINISHPG_TODAYCOD_CLICK = @"finishpg.todaycod click";
+/// 历史订单, 点击已完成tip
+NSString *const SFK_FINISHPG_COMPLETE_CLICK = @"finishpg.complete click";
+/// 历史订单, 点击已取消tip
+NSString *const SFK_FINISHPG_ABOLISH_CLICK = @"finishpg.abolish click";
+/// 历史订单, 点击货到付款tip
+NSString *const SFK_FINISHPG_COD_CLICK = @"finishpg.cod click";
+/// 历史订单, 点击订单条目
+NSString *const SFK_FINISHPG_CELL_CLICK = @"finishpg.cell click";
+/// 导航页面, 导航选择iphone自带导航（仅供ios）
+NSString *const SFK_NAVPG_ZIDAI_CLICK = @"navpg.zidai click";
+/// 导航页面, 导航选择百度地图导航
+NSString *const SFK_NAVPG_BAIDU_CLICK = @"navpg.baidu click";
+/// 导航页面, 导航选择高德地图导航
+NSString *const SFK_NAVPG_GAODE_CLICK = @"navpg.gaode click";
+/// 导航页面, 导航选择腾讯地图导航
+NSString *const SFK_NAVPG_TENGXUN_CLICK = @"navpg.tengxun click";
+/// 导航页面, 点击地图上的定位按钮
+NSString *const SFK_NAVPG_LOC_CLICK = @"navpg.loc click";
+/// 导航页面, 点击本机地图按钮
+NSString *const SFK_NAVPG_BENJI_CLICK = @"navpg.benji click";
+/// 消息通知, 下拉刷新
+NSString *const SFK_NOTIFIYPG_REFRESH_CLICK = @"notifiypg.refresh click";
+/// 设置, 退出当前帐号
+NSString *const SFK_SETTINGPG_OUT_CLICK = @"settingpg.out click";
+/// 设置, 关于我们
+NSString *const SFK_SETTINGPG_ABOUTUS_CLICK = @"settingpg.aboutus click";
+/// 无网络页面, 点击刷新按钮
+NSString *const SFK_NONET_REFESH_CLICK = @"nonet.refesh click";
